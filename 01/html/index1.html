@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- DOM基本操作 -->
+    <!-- 凡是文本框，都是通过value来获取 -->
+
+
+    <!-- <script>
+        window.onload = function()
+        {
+            var oInput = document.createElement("input");
+            oInput.id = "btn";
+            oInput.type = "button";
+            oInput.value = "提交";
+            document.body.appendChild(oInput);
+
+            var obBtn = document.getElementById("btn");
+            obBtn.onclick = function(){
+                alert(obBtn.type);
+            }
+        }
+    </script> -->
+
+    <script>
+        window.onload = function()
+        {
+
+
+            // var oInput = document.createElement("input");
+            // oInput.id = "btn";
+            // oInput.type = "button";
+            // oInput.value = "提交2";
+            // document.body.appendChild(oInput);
+
+            var btn = document.getElementById("btn");
+
+            // var op = document.getElementById
+
+            btn.onclick = function(){
+                alert(btn.getAttribute("data"));
+            }
+            
+        }
+    </script>
+
+</head>
+<body>
+    <input id="btn" class="myBtn" type="button" value="获取" data="自定义属性" />
+
+    <input id="btn2" class="myBtn" type="button" value="获取" />
+
+
+    <br>
+
+    <p class="main">这是一个特别的段落</p>
+    <p class="main">这是一个特别的段落</p>
+ 
+</body>
+</html>
