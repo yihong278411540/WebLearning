@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>表格</title>
+</head>
+
+<body>
+
+    <!-- 表格  行tr  列td-->
+    <!-- 快速生成表格结构快捷键：table>tr*2>td*5 -->
+
+    <!-- 常用属性 -->
+    <!-- border分隔线  width宽 height高 -->
+
+
+    <table border="1px" width="300" height="100">
+        <tr>
+            <td>单元格</td>
+            <td>单元格</td>
+            <td>单元格</td>
+        </tr>
+        <tr>
+            <td>单元格</td>
+            <td>单元格</td>
+            <td>单元格</td>
+        </tr>
+        <tr>
+            <td>单元格</td>
+            <td>单元格</td>
+            <td>单元格</td>
+        </tr>
+    </table>
+
+    <table>
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td>7</td>
+            <td>8</td>
+            <td>9</td>
+            <td>10</td>
+        </tr>
+    </table>
+
+    <!-- 合并单元格 -->
+    <!-- 水平合并colsspan,垂直合并rowspan -->
+    <p>合并以左上为基准</p>
+    <table border="1px" width="500" height="200">
+        <tr>
+            <td colspan="2">单元格1</td>
+            <td>单元格3</td>
+            <td>单元格4</td>
+            <td>单元格5</td>
+        </tr>
+        <tr>
+            <td>单元格6</td>
+            <td>单元格7</td>
+            <td>单元格8</td>
+            <td>单元格9</td>
+            <td>单元格10</td>
+        </tr>
+        <tr>
+            <td>单元格11</td>
+            <td colspan="2" rowspan="2">单元格12</td>
+            <td>单元格14</td>
+            <td>单元格15</td>
+        </tr>
+        <tr>
+            <td>单元格16</td>
+            <td>单元格19</td>
+            <td rowspan="2">单元格</td>
+        </tr>
+        <tr>
+            <td>单元格21</td>
+            <td>单元格22</td>
+            <td>单元格23</td>
+            <td>单元格24</td>
+        </tr>
+    </table>
+
+
+</body>
+
+</html>
