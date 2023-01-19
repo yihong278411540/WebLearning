@@ -8,13 +8,13 @@
     <title>选择器</title>
 
     <style>
-        /* 全局选择器 */
+        /* 1.全局选择器 */
         * {
             font-size: 30;
             color: black;
         }
 
-        /* 标签选择器 */
+        /* 2.元素选择器 */
         h3 {
             color: blue;
         }
@@ -22,10 +22,53 @@
             color: green;
             font-size: 20px;
         }
+        div{
+            color: aqua;
+            font-size: large; 
+        }
 
+        /* 3.类选择器 */
+        /* 类选择器可以被多种标签使用
+           不能以数字开头
+           同一个标签可以写多个class，用空格隔开 */
 
+        .content{
+            color: red;
+            font-size: 20px;
+        }
+        .size{
+            color: yellow;
+        }
 
+        /* 4.id选择器 */
+        /* 针对某一个特定的标签来使用，只能使用一次。css中id选择器以#来定义
+           不能以数字开头 */
+        #text1{
+            color: goldenrod;
+            font-size: 20px;
+        }
 
+        /* 5.合并选择器 */
+        .title,.contentp{
+            color: blueviolet;
+            font-size: 20px;
+        }
+        p,h4{
+            color: orange;
+            font-size: 30px;
+        }
+        
+
+        /* 6.选择器的优先级 */
+        /* 
+        元素选择器的权重为：1
+        class选择器的权重为：10
+        id选择器的权重为：100
+        内联选择器的权重为：1000
+
+        优先级从高到低：行内样式>id选择器>类选择器>元素选择器
+
+        */
 
 
     </style>
@@ -41,8 +84,23 @@
     <p>我是第二个文本段落</p>
     <p>我是第二个<span>span标签</span>文本段落</p>
 
-
+    <div>
+        <ul>
+            <li>
+                这是一个li标签
+            </li>
+        </ul>
+    </div>
     
+    <p class="content">大家好</p>
+    <p class="content">我很好</p>
+    <p class="content size">我emo了!</p>
+
+    <p id="text1">Hello</p>
+
+
+    <h4 class="title">这是一个h4标签</h4>
+    <p class="contentp">这是一个p标签</p>
 
 
 </body>
