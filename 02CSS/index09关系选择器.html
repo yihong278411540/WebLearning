@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* 1.后代选择器，ul下的所有的子孙li标签 */
+      ul li {
+        color: red;
+      }
+      /* 2.子代选择器, div下的子代p标签 */
+      div > p {
+        color: green;
+      }
+      /* 3.相邻兄弟选择器，h3向下相邻的p标签 */
+      h3 + p {
+        color: yellow;
+      }
+      /* 4.通用兄弟选择器，h3向下所有的p标签 */
+      h3 ~ p {
+        color: blueviolet;
+      }
+
+    </style>
+  </head>
+  <body>
+    <ul>
+      <li>列表1</li>
+      <li>列表2</li>
+      <li>列表3</li>
+      <div>
+        <ol>
+          <li>列表4</li>
+          <li>列表5</li>
+        </ol>
+      </div>
+    </ul>
+
+    <div>
+      <p>大家好</p>
+      <ul>
+        <li>
+          <p>我很好</p>
+        </li>
+      </ul>
+    </div>
+
+    <h3>我是标题</h3>
+    <p>我是内容1</p>
+    <p>我是内容2</p>
+
+    <h4>我是标题</h4>
+    <p>我是内容1</p>
+    <p>我是内容2</p>
+    <i>我是内容3</i>
+    <p>我是内容4</p>
+
+
+
+  </body>
+</html>

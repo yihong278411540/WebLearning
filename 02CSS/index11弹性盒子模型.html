@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        /* 弹性盒子通过设置display属性的值为flex将其定义为弹性容器，
+        弹性容器内包含一个或多个弹性子元素 */
+        .container{
+            width: 500px;
+            height: 500px;
+            background-color: rebeccapurple;
+            display: flex;
+            /* 方向 row横向 column纵向 */
+            flex-direction: row;
+            /* 垂直方向 */
+            justify-content: center;
+            /* 水平方向 */
+            align-items: center;
+
+        }
+
+        .box1{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            /* 子盒子分配权重 */
+            flex: 2;
+        }
+
+        .box2{
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            /* 子盒子分配权重 */
+            flex: 1;
+        }
+
+        .box3{
+            width: 100px;
+            height: 100px;
+            background-color: green;
+            /* 子盒子分配权重 */
+            flex: 1;
+        }
+
+
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="box1"></div>
+        <div class="box2"></div>
+        <div class="box3"></div>
+    </div>
+    
+</body>
+</html>
