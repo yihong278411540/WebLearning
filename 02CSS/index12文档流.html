@@ -1,48 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
 
     <style>
-
-         /* 标准文档流出现问题 
+      /* 标准文档流出现问题 
         1.文本高低不齐，会以底部对齐问题
         2.空格折叠问题
         3.文本间隙问题
          */
 
-        /* 解决方案：脱离文档流 
+      /* 解决方案：脱离文档流 
         1.浮动
         2.绝对定位
         2.固定定位
         */
 
-        /* 浮动 float
-        元素向左浮动
-
+      /* 浮动 float
+        元素浮动
          */
+      /* .box12 {
+        width: 200px;
+        height: 200px;
+        background-color: aqua;
+        float: left;
+      }
+      .container {
+        width: 400px;
+        height: 400px;
+        background-color: blueviolet;
+      }
+      img {
+        float: left;
+      }
 
-        .box12 {
-            width: 200;
-            height: 200;
-            background-color: aqua;
-        }
-        .container {
-            width: 400;
-            height: 400;
-            background-color: blueviolet;
-        }
+      ul li {
+        float: left;
+        margin: 40px;
+      } */
 
+      /*
+      清除浮动
+
+      浮动副作用
+      当元素设置float浮动后，该元素就会脱离文档流
+      1.浮动造成父元素的高度塌陷
+      2.浮动会造成后续元素受到影响
+
+      清除浮动
+      1.给父元素设置高度
+      2.添加clear属性
+      3.overflow + clear清除浮动
+      4.伪对象形式清除浮动 ::after
+      子级里面的添加clear
+       */
+
+      .container {
+        width: 500px;
+        background-color: #888;
+        overflow: hidden;
+        clear: both;
+      }
+      /* .container::after {
+        background-color: #888;
+        content: "";
+        overflow: hidden;
+        clear: both;
+      } */
+      .box1 {
+        width: 100px;
+        height: 100px;
+        background-color: yellow;
+        margin: 5px;
+        float: left;
+      }
+      .box2 {
+        width: 100px;
+        height: 100px;
+        background-color: yellow;
+        margin: 5px;
+        float: left;
+      }
+      .box3 {
+        width: 100px;
+        height: 100px;
+        background-color: yellow;
+        margin: 5px;
+        float: left;
+      }
+      .box4 {
+        width: 100px;
+        height: 100px;
+        background-color: blue;
+        clear: both;
+      } 
 
     </style>
-
-</head>
-<body>
-
-<!--     
+  </head>
+  <body>
+    <!--     
     <span>我们一起看看世界</span>
     <img src="../01HTML/images/001.webp" alt="">
 
@@ -52,14 +111,30 @@
     <img src="../01HTML/images/skinandcoat_cat_body-image-1.jpeg" alt="">  
 -->
 
-    <div class="box12">
-        <!-- <p>sdfjk</p> -->
-    </div>
+    <!-- 
+    <div class="box12"></div>
+    <div class="container"></div>
+
+    <img src="../01HTML/images/skinandcoat_cat_body-image-1.jpeg" alt="" />
+    <img src="../01HTML/images/skinandcoat_cat_body-image-1.jpeg" alt="" /> 
+-->
+
+    <!-- <ul>
+      <li>导航1</li>
+      <li>导航2</li>
+      <li>导航3</li>
+      <li>导航4</li>
+    </ul> 
+-->
+
     <div class="container">
-        <!-- <p>sdfjl</p> -->
+      <div class="box1"></div>
+      <div class="box2"></div>
+      <div class="box3"></div>
+      <div class="box4"></div>
     </div>
+    <div class="box4"></div>
 
 
-           
-</body>
+  </body>
 </html>

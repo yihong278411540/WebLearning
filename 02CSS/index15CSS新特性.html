@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      /* 圆角 */
+      .box1 {
+        width: 100px;
+        height: 100px;
+        background-color: rebeccapurple;
+        margin: 50px;
+        border-radius: 50px 20px;
+      }
+
+      /* 阴影
+       box-shadow 横向，纵向，阴影透明度，阴影颜色 */
+      .box2 {
+        width: 100px;
+        height: 100px;
+        background-color: blueviolet;
+        margin: 50px;
+        box-shadow: 10px 10px 40px rosybrown;
+      }
+
+      /* 动画
+       */
+      @keyframes myAnimation {
+        0% {
+          background-color: red;
+          width: 100px;
+        }
+        25% {
+          background-color: yellow;
+          width: 200px;
+        }
+        50% {
+          background-color: green;
+          width: 400px;
+        }
+        75% {
+          background-color: yellow;
+          width: 200px;
+        }
+        100% {
+          background-color: blue;
+          width: 100px;
+        }
+      }
+      .box3 {
+        width: 100px;
+        height: 100px;
+        margin-left: 50px;
+        /* 动画名称 动画时间 动画速度 动画延迟 动画循环次数 动画播放方向 */
+        animation: myAnimation 5s linear 1s infinite normal;
+      }
+      /* 鼠标悬停 */
+      .box3:hover {
+        animation-play-state: paused;
+      }
+
+      /* 动画-呼吸效果  opacity：透明度 */
+      @keyframes breathe {
+        0% {
+          opacity: 0.2;
+          box-shadow: 0 1px 2px rgba(255, 255, 255, 0.1);
+        }
+        50% {
+          opacity: 0.5;
+          box-shadow: 0 1px 2px rgba(18, 190, 84, 0.76);
+        }
+        100% {
+          opacity: 1;
+          box-shadow: 0 1px 2px rgba(59, 255, 255, 1);
+        }
+      }
+      .box4 {
+        width: 300px;
+        height: 300px;
+        margin: 50px;
+        background-color: #3b92d4;
+        border-radius: 5px;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+        animation: breathe 2s ease-in-out 0s infinite alternate;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+
+    <div class="box3"></div>
+
+    <div class="box4"></div>
+  </body>
+</html>
