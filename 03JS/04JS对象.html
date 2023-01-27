@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+// 创建一个对象
+        var user = {
+            name: "xiao ming",
+            age: 18,
+            jobs: ["itbaizhan","sxt"],
+            getName: function() {
+                return this.name;
+            },
+            container: {
+                frontEnd:"WEB前端",
+                backEnd:["python","java"]
+            }
+        }
+        // 对象的读取方式
+        console.log(user.getName());
+        console.log(user.jobs);
+
+        //链式调用: 对象里包含对象
+        console.log(user.container.backEnd);
+
+//math 对象
+        var num = -100;
+        console.log(Math.abs(num));//绝对值
+
+        //最大最小数
+        console.log(Math.max(10,20,9,12,40));
+        console.log(Math.min(10,20,9,12,40));
+
+        //取整
+        var num1 = 10.9
+        console.log(Math.floor(num1));//向上取整
+        console.log(Math.ceil(num1));//向下取整
+
+        //Math random (0-1)之间的随机数
+        console.log(Math.random());
+
+        function getRandomNum(min, max) {
+            var ran = Math.random();
+            var num = min + (max - min) * ran;
+            var result = Math.floor(num);
+            return result;
+        }
+        console.log(getRandomNum(100, 120));//100 - 120之间的随机数
+
+//Date对象
+        console.log(Date.now());
+        var inter = Date.now();
+        var year = new Date().getFullYear();
+        var month = new Date().getMonth() + 1;
+        var day = new Date().getDay();
+        console.log(year + "-" + month + "-" + day);
+        
+
+
+
+    </script>
+    
+</body>
+</html>

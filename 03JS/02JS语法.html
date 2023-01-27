@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        // 输出方式
+        // 1.弹出对话框
+        // alert("输出的内容");d
+        // 2.输出到页面上
+        document.write("输出的内容");
+        // 3.控制台输出
+        console.log("输出的内容");
+
+        // 数据类型
+        // ES5有6种数据类型：数值number，字符串string，布尔值bool，undefined，null，对象object
+        // ES6又增加数据类型：Symbol，BigInt
+
+
+        // typeof 获取数据类型
+        var num = 20;
+        // typeof(num);
+        document.write(typeof(num));
+
+
+        //== 判断值，=== 判断值和类型
+
+        document.write("\n");
+        
+
+        // 字符串
+        // 字符串 charAt 截取字符
+        var string1 = "string1";
+        document.write(string1.charAt(1));
+
+        document.write("\n");
+
+        // 字符串 concat 合并
+        var string2 = "string2"
+        document.write(string1.concat(string2));
+
+        document.write("\n");
+
+        //字符串 substring 截取一段string
+        var name = "itbaizhan";
+        document.write(name.substring(1, 5));
+
+        //array
+        var array = [10,20,30];
+
+        //是否是数组 isArray
+        console.log(Array.isArray(array));
+
+        //数组添加 删除 最后一个元素 push pop
+        array.push("hello");
+        array.pop();
+
+        //数组添加 删除 第一个元素 unshift shift
+        array.unshift("word","word","word");
+        array.shift();
+
+        console.log(array);
+
+        //数组转化字符串方法 join split
+        var arr1 = ["hello","world","123"];
+        var arr1Str = arr1.join("|");
+        var arr2 = arr1Str.split("|");
+        console.log(arr1Str);
+        console.log(arr2);
+
+        //数组合并 concat
+        var arr3 = arr1 + arr2;
+        console.log(typeof(arr3));//string
+
+        var arr4 = arr1.concat(arr2);
+        console.log(arr4);//array
+
+        //数组反转 reverse
+        var arr5 = arr4.reverse();
+        console.log(arr5);
+
+        //数组方法 indexof
+        console.log(arr5.indexOf("123"));//0
+
+
+
+
+    </script>
+    
+</body>
+</html>
