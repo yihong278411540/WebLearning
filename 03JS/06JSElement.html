@@ -5,6 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+    </style>
+
 </head>
 <body>
 
@@ -17,9 +26,28 @@
         var root = document.getElementById("root");
         root.id = "roots";
         console.log(root);
-        root.className = "boxs box1";
+        // root.className = "boxs box1";
+        root.className = "boxs box"
         console.log(root);
 
+        root.classList.remove("box")
+
+        if (root.classList.contains("box")) {
+            console.log('yes');
+        }else{
+            console.log('no');
+        }
+
+        root.innerHTML = "大家好呀";
+        root.innerText = "娃哈哈哈哈哈";
+
+        //innerHTML和innerText的区别
+        //innerHTML可以识别标签
+        //innerText只能识别成字符串
+
+        var str = "<a href='https://www.itbaizhan.com'>百战</a>"
+        // root.innerHTML = str;
+        root.innerText = str;
 
     </script>
     
