@@ -1,5 +1,5 @@
 <!--index.wxml-->
-<view class="container">
+<!-- <view class="container">
   <view class="userinfo">
     <block wx:if="{{canIUseOpenData}}">
       <view class="userinfo-avatar" bindtap="bindViewTap">
@@ -20,4 +20,25 @@
   <view class="usermotto">
     <text class="user-motto">{{motto}}</text>
   </view>
+</view> -->
+
+
+<!-- <image src="/images/1.png" mode="heightFix"/> -->
+
+<view>
+  {{info}}
+</view>
+
+<image src="{{imgSrc}}" mode="aspectFit"/>
+
+<view>
+  {{randomNum >= 5 ? '随机数大于等于5' : '随机数小于5'}}
+</view>
+
+<!-- bindtap="outerHander(123)" -->
+<view class="outer-view">
+  <button type="primary" bindtap="outerHander(123)">按钮</button>
+  <button type="warn" bindtap="btnHandler" data-info="{{2}}">事件传值</button>
+  <button type="primary">{{count}}</button>
+  <input value="{{msg}}" bindinput="inputHandler"/>
 </view>
