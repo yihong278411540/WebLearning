@@ -1,0 +1,43 @@
+<!--pages/testPage/test.wxml-->
+<text>pages/testPage/test.wxml</text>
+
+
+<!-- <image src="/images/1.png" mode="heightFix"/> -->
+
+<view>
+  {{info}}
+</view>
+
+<image src="{{imgSrc}}" mode="aspectFit"/>
+
+<view>
+  {{randomNum >= 5 ? '随机数大于等于5' : '随机数小于5'}}
+</view>
+
+<!-- bindtap="outerHander(123)" -->
+<view class="outer-view">
+  <button type="primary" bindtap="outerHander(123)">按钮</button>
+  <button type="warn" bindtap="btnHandler" data-info="{{2}}">事件传值</button>
+  <button type="primary">{{count}}</button>
+  <input value="{{msg}}" bindinput="inputHandler"/>
+</view>
+
+<block>
+  <view wx:if="{{count == 1}}">男</view>
+  <view wx:elif="{{count === 2}}">女</view>
+  <view wx:else>保密</view>
+</block>
+
+<view wx:for="{{array}}">
+索引是：{{index}}当前项是：{{item}}
+</view>
+
+<view class="small-p" wx:for="{{userList}}" wx:key="id">
+  {{item.name}}
+  {{item.age}}
+</view>
+
+<button bindtap="getInfo">GET请求</button>
+<button bindtap="getInfo2">POST请求</button>
+
+
