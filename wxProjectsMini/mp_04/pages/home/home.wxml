@@ -1,0 +1,37 @@
+<!--pages/home/home.wxml-->
+<text>pages/home/home.wxml</text>
+
+
+<view></view>
+
+<my-test max = "5"></my-test>
+
+
+<!-- <my-test2></my-test2>
+
+
+<my-test3></my-test3> -->
+
+<my-test4>
+	<view slot = "before">
+		这是before插槽
+	</view>
+	<view slot = "after">
+		这是after插槽
+	</view>
+</my-test4>
+
+<!-- //事件绑定 子传父 2 -->
+<my-test5 count="{{count}}" bind:sync="syncCount" class="customA" id="cA">
+
+</my-test5>
+
+<view>
+	---------------
+</view>
+
+<view>
+	父组件中count = {{count}}
+</view>
+
+<button bindtap="getChild">获取子组件的实例对象</button>

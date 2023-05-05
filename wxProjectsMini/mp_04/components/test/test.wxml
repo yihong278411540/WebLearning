@@ -1,0 +1,5 @@
+<!--components/test/test.wxml-->
+<text>components/test/test.wxml</text>
+
+<button bindtap="addcount">count = {{count}}</button>
+<button bindtap="addMaxcount">max = {{max}}</button>

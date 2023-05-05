@@ -20,3 +20,5 @@
   <image src="/images/link-01.png" mode="widthFix"/>
   <image src="/images/link-02.png" mode="widthFix"/>
 </view>
+
+<my-test></my-test>

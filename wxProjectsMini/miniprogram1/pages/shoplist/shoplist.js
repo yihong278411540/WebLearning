@@ -25,8 +25,8 @@ Page({
   },
 
   // 数据请求
-  getShopList() {
-    console.log(this.data.query.id)
+  getShopList(cb) {
+    console.log(this.data.page)
 
     this.setData({
       isloading: true
@@ -50,11 +50,12 @@ Page({
           total: res.header['X-Total-Count'] - 0
         })
       },
-      complete() {
+      complete: (res) => {
         wx.hideLoading()
         this.setData({
           isloading: false
         })
+        cb && cb()
       }
     })
   },
@@ -94,15 +95,26 @@ Page({
    */
   onPullDownRefresh() {
     this.setData({
-      page: 1
+      page: 1,
+      shopList: [],
+      total: 0
     })
-    this.getShopList()
+    this.getShopList(() => {
+      wx.stopPullDownRefresh()
+    })
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom() {
+    if (this.data.page * this.data.pageSize >= this.data.total) {
+      wx.showToast({
+        title: '数据加载完毕!',
+        icon: 'none'
+      })
+      return
+    }
     if (this.data.isloading) {
       return
     }
