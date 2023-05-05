@@ -6,6 +6,12 @@ module.exports = Behavior ({
 
 	},
 	methods: {
-		
+
+	},
+	behaviors: [],
+
+	//不常用的属性
+	lifetimes: {
+
 	}
 })
