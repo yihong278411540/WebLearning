@@ -33,7 +33,8 @@
     ]
   },
   "usingComponents": {
-    "vant-button": "@vant/weapp/button/index"
+    "vant-button": "@vant/weapp/button/index",
+    "my-numbers": "./components/numbers/numbers"
   },
   "sitemapLocation": "sitemap.json"
 }
