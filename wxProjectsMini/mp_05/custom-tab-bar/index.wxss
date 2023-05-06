@@ -1,0 +1,6 @@
+/* custom-tab-bar/index.wxss */
+
+.van-tabbar-item {
+	--tabbar-item-margin-bottom: 0;
+}
+
