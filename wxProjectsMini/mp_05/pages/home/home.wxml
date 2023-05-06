@@ -1,0 +1,6 @@
+<!--pages/home/home.wxml-->
+
+
+
+<vant-button type="primary" bindtap="getInfo">按钮</vant-button>
+<vant-button type="danger" size="mini">按钮</vant-button>
