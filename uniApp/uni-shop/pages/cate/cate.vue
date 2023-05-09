@@ -1,18 +1,21 @@
 <template>
   <view>
+    <!-- 搜索组件 -->
+    <my-search :bgcolor="'pink'" :radius="10" @click="gotoSearch"></my-search>
+    
     <view class="scroll-view-container">
       <!-- 左侧滑动区域 -->
-      <scroll-view class="left-scroll-view" scroll-y style="{height: wh +'px'}">
+      <scroll-view class="left-scroll-view" scroll-y="true" :style="{height: wh +'px'}">
         <!-- <view class="left-scroll-view-item active">0000000</view> -->
         <block v-for="(item,index) in cateList" :key="index">
           <view :class="['left-scroll-view-item', index === active ? 'active' : '']" @click="activeChanged(index)">
             {{item.cat_name}}
           </view>
         </block>
-        
       </scroll-view>
+      
       <!-- 右侧滑动区域 -->
-      <scroll-view class="right-scroll-view" scroll-y style="{height: wh +'px'}" :scroll-top="scrollTop">
+      <scroll-view class="right-scroll-view" scroll-y="true" :style="{height: wh +'px'}" :scroll-top="scrollTop">
         <view class="cate-leve2" v-for="(item,index) in cateLevel2List" :key="index">
           <view class="cate-leve2-title">
             / {{item.cat_name}} /
@@ -25,9 +28,10 @@
             
           </view>
         </view>
-        
       </scroll-view>
+      
     </view>
+    
   </view>
 </template>
 
@@ -46,7 +50,7 @@
     onLoad() {
       const sys = uni.getSystemInfoSync()
       this.ww = sys.windowWidth
-      this.wh = sys.windowHeight
+      this.wh = sys.windowHeight - 50
       this.getCateList()
     },
     methods: {
@@ -84,6 +88,13 @@
         jumpGoodsList(item3) {
           uni.navigateTo({
             url:'/subpkg/goods_list/goods_list?cid=' + item3.cat_id
+          })
+        },
+        
+        gotoSearch() {
+          console.log('ok')
+          uni.navigateTo({
+            url:'/subpkg/search/search'
           })
         }
     }
