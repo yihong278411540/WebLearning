@@ -1,6 +1,6 @@
 <template>
   <view>
-    
+    goodsList
   </view>
 </template>
 
@@ -8,11 +8,8 @@
   export default {
     data() {
       return {
-        
-      }
-    },
-    methods: {
-      
+        goodsList: [],
+      };
     }
   }
 </script>

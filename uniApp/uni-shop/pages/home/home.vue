@@ -10,11 +10,28 @@
     </swiper>
     <!-- 分类导航 -->
     <view class="nav-list">
-      <view class="nav-item" v-for="(item,index) in navList" :key="index">
+      <view class="nav-item" v-for="(item,index) in navList" :key="index" @click="navClickHandler(item)">
         <image :src="item.image_src" class="nav-img"></image>
       </view>
     </view>
     
+    <view class="floor-list">
+      <view class="floor-item" v-for="(item,index) in floorList" :key="index">
+        <image :src="item.floor_title.image_src" class="floor-title"></image>
+        <view class="floor-image-box">
+          <!-- 左侧 -->
+          <navigator class="left-image-box" :url="item.product_list[0].url">
+            <image :src="item.product_list[0].image_src" :style="{width: item.product_list[0].image_width + 'rpx'}" mode="widthFix"></image>
+          </navigator>
+          <!-- 右侧 -->
+          <view class="right-image-box">
+            <navigator class="right-image-item" v-for="(item2,index2) in item.product_list" :key="index2" v-if="index2 !== 0" :url="item2.url">
+              <image :src="item2.image_src" :style="{width: item2.image_width + 'rpx'}" mode="widthFix"></image>
+            </navigator>
+          </view>
+        </view>
+      </view>
+    </view>
     
   </view>
 </template>
@@ -26,6 +43,7 @@
         //1. 轮播图的数据列表，默认为空数组
         swiperList: [],
         navList: [],
+        floorList: [],
       }
     },
     
@@ -33,6 +51,7 @@
       //2.在小程序页面刚加载的时候，调用获取轮播图数据的方法
       this.getSwiperList()
       this.getNavList()
+      this.getFloorList()
     },
     methods: {
       //3.请求轮播图列表
@@ -46,6 +65,7 @@
         uni.$showMsg('swiperList数据加载成功')
       },
       
+      //导航分类列表
       async getNavList() {
         const { data: res } = await uni.$http.get('/api/public/v1/home/catitems')
         if (res.meta.status !== 200) return uni.$showMsg()
@@ -53,7 +73,31 @@
         
         console.log(res)
         uni.$showMsg('navList数据加载成功')
-      }
+      },
+      
+      //获取楼层列表数据
+      async getFloorList() {
+        const { data: res } = await uni.$http.get('/api/public/v1/home/floordata')
+        if (res.meta.status !== 200) return uni.$showMsg()
+        
+        res.message.forEach(item => {
+          item.product_list.forEach(product => {
+            product.url = "/subpkg/goods_list/goods_list?" + product.navigator_url.split('?')[1]
+          })
+        })
+        
+        this.floorList = res.message
+      },
+      
+      // 导航点击事件
+      navClickHandler(item) {
+        if (item.name === '分类') {
+          uni.switchTab({
+            url:"/pages/cate/cate"
+          })
+        }
+      },
+      
       
     },
     
@@ -80,5 +124,20 @@
       height: 140rpx;
     }
   }
+  
+  .floor-title {
+    width: 100%;
+    height: 60rpx;
+  }
+  .right-image-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  .floor-image-box {
+    display: flex;
+    padding-left: 10rpx;
+  }
+  
   
 </style>
