@@ -121,7 +121,6 @@
 
 <style lang="scss">
   
-  
   .search-box{
     background-color: #c00000;
     position: sticky;
