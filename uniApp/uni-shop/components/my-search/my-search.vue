@@ -30,6 +30,7 @@
     methods: {
       seachBoxHandler() {
         console.log('-------')
+        // 绑定组件事件
         this.$emit('click')
       }
     }
