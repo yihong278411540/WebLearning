@@ -13,6 +13,9 @@
     },
     methods: {
       
+    },
+    onLaunch(options) {
+      console.log(options)
     }
   }
 </script>
