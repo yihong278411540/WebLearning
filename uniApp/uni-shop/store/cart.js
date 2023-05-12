@@ -1,4 +1,5 @@
 export default {
+  //为当前模块开启命名空间
   namespaced: true,
   
   // 模块的 state 数据
@@ -8,7 +9,6 @@ export default {
     // { goods_id, goods_name, goods_price, goods_count, goods_small_logo, goods_state }
     cart: JSON.parse(uni.getStorageSync('cart') || '[]'),
   }),
-  
   
   // 模块的 mutations 方法 用来修改模块属性的值
   mutations: {
@@ -32,6 +32,28 @@ export default {
     //数据持久化 存储到本地
     saveToStorage(state) {
       uni.setStorageSync('cart', JSON.stringify(state.cart))
+    },
+    
+    updateGoodsState(state, goods) {
+      const findResult = state.cart.find(x => x.goods_id === goods.goods_id)
+      if (findResult) {
+        findResult.goods_state = goods.goods_state
+        this.commit('m_cart/saveToStorage')
+      }
+    },
+    
+    updateGoodsNum(state, goods) {
+      const findResult = state.cart.find(x => x.goods_id === goods.goods_id)
+      if (findResult) {
+        findResult.goods_count = goods.goods_count
+        this.commit('m_cart/saveToStorage')
+      }
+    },
+    
+    removeGoods(state, goods) {
+      // 调用数组的 filter 方法进行过滤
+      state.cart = state.cart.filter(x => x.goods_id !== goods.goods_id)
+      this.commit('m_cart/saveToStorage')
     }
   },
   
