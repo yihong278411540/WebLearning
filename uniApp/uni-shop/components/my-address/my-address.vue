@@ -5,7 +5,7 @@
       <button type="primary" size="mini" class="address-choose-btn" @click="chooseAddress">请选择收获地址+</button>
     </view>
     <!-- 地址信息 -->
-    <view class="address-info-box" v-else>
+    <view class="address-info-box" v-else @click="chooseAddress()">
       <view class="row1">
         <view class="row1-left">
           收货人：<text>{{address.userName}}</text>
@@ -32,21 +32,27 @@
 </template>
 
 <script>
+  import { mapState, mapGetters, mapMutations } from 'vuex'
+  
   export default {
     name:"my-address",
     
     computed: {
-      addStr() {
-        if (!this.address.provinceName) return ''
-        return this.address.provinceName + this.address.cityName + this.address.countyName + this.address.detailInfo
-      }
+      ...mapState('m_user', ['address']),
+      ...mapGetters('m_user', ['addStr'])
+      // addStr() {
+      //   if (!this.address.provinceName) return ''
+      //   return this.address.provinceName + this.address.cityName + this.address.countyName + this.address.detailInfo
+      // }
     },
     data() {
       return {
-        address: {}
+        // address: {}
       };
     },
     methods: {
+      ...mapMutations('m_user', ['updateAddress']),
+      
       async chooseAddress(){
         // 1. 调用小程序提供的 chooseAddress() 方法，即可使用选择收货地址的功能
         //    返回值是一个数组：第 1 项为错误对象；第 2 项为成功之后的收货地址对象
@@ -55,12 +61,45 @@
         // 2. 用户成功的选择了收货地址
         if (err === null && succ.errMsg === 'chooseAddress:ok') {
           // 为 data 里面的收货地址对象赋值
-        this.address = succ
+          // this.address = succ
+          this.updateAddress(succ)
+          
+          console.log(succ)
+        }
+        // 3. 用户没有授权
+        else if (err && (err.errMsg === 'chooseAddress:fail auth deny' || err.errMsg === 'chooseAddress:fail authorize no response')) {
+          this.reAuth() // 调用 this.reAuth() 方法，向用户重新发起授权申请
+        }
         
-        console.log(succ)
-      }
+      },
+      
+      // 调用此方法，重新发起收货地址的授权
+      async reAuth() {
+        const [err2, confirmResult] = await uni.showModal({
+          content: '检测到您没打开地址权限，是否去设置打开？',
+          confirmText: "确认",
+          cancelText: "取消",
+        })
+        
+        if (err2) return
+        
+        console.log(confirmResult)
+        
+        if (confirmResult.cancel) return uni.$showMsg('您取消了地址授权')
+        else if (confirmResult.confirm) {
+          // return console.log('需要进一步授权')
+          return uni.openSetting({
+            success: (settingResult) => {
+              if (settingResult.authSetting['scope.address']) return uni.$showMsg('授权成功！请选择地址')
+              else if (!settingResult.authSetting['scope.address']) return uni.$showMsg('您取消了地址授权！')
+            }
+          })
+        }
+        
         
       }
+      
+      
     }
   }
 </script>
