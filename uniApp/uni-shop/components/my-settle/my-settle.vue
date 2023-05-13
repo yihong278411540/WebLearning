@@ -11,7 +11,7 @@
     </view>
     
     <!-- 结算按钮 -->
-    <view class="settle-btn">
+    <view class="settle-btn" @click="settlement">
       结算({{checkedCount}})
     </view>
     
@@ -19,13 +19,16 @@
 </template>
 
 <script>
-  import { mapGetters, mapMutations } from 'vuex' 
+  import { mapGetters, mapMutations, mapState } from 'vuex' 
   
   export default {
     name:"my-settle",
     
     computed: {
       ...mapGetters('m_cart', ['checkedCount', 'total', 'checkedGoodsAmount']),
+      ...mapGetters('m_user', ['addstr']),
+      ...mapState('m_user',['token']),
+      
       isFullCheck() {
         return this.total === this.checkedCount
       }
@@ -41,6 +44,12 @@
       changeAllState(){
         console.log(this.isFullCheck)
         this.updateAllGoodsState(!this.isFullCheck)
+      },
+      
+      settlement(){
+        if (!this.isFullCheck) return uni.$showMsg('请选择要结算的商品！')
+        // if (!this.addstr) return uni.$showMsg('请选择收货地址！')
+        if (!this.token) return uni.$showMsg('请先登录！')
       }
     }
   }
