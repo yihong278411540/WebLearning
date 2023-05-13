@@ -34,6 +34,7 @@ export default {
       uni.setStorageSync('cart', JSON.stringify(state.cart))
     },
     
+    //更新商品选中状态
     updateGoodsState(state, goods) {
       const findResult = state.cart.find(x => x.goods_id === goods.goods_id)
       if (findResult) {
@@ -42,6 +43,7 @@ export default {
       }
     },
     
+    //更新商品数量
     updateGoodsNum(state, goods) {
       const findResult = state.cart.find(x => x.goods_id === goods.goods_id)
       if (findResult) {
@@ -50,20 +52,40 @@ export default {
       }
     },
     
+    //删除商品
     removeGoods(state, goods) {
       // 调用数组的 filter 方法进行过滤
       state.cart = state.cart.filter(x => x.goods_id !== goods.goods_id)
       this.commit('m_cart/saveToStorage')
+    },
+    
+    //商品反选
+    updateAllGoodsState(state, newState) {
+      console.log(newState)
+      state.cart.forEach(x => x.goods_state = newState)
+      this.commit('m_cart/saveToStorage')
     }
+    
   },
   
   // 模块的 getters 属性
   getters: {
+    //所有商品总数量
     total(state) {
-      let c = 0
-      state.cart.forEach(goods => c += goods.goods_count)
-      return c
-    }
+      // let c = 0
+      // state.cart.forEach(goods => c += goods.goods_count)
+      // return c
+      return state.cart.reduce((total, item) => total += item.goods_count, 0)
+    },
+    //已勾选商品数量
+    checkedCount(state) {
+      return state.cart.filter(x => x.goods_state).reduce((total, item) => total += item.goods_count, 0)
+    },
+    checkedGoodsAmount(state) {                       
+      return state.cart.filter(x => x.goods_state)
+      .reduce((total, item) => total += item.goods_count * item.goods_price, 0)
+      .toFixed(2)
+    },
   },
   
 }

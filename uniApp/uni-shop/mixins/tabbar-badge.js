@@ -6,6 +6,12 @@ export default {
   computed: {
     ...mapGetters('m_cart', ['total']),
   },
+  watch: {
+    total() {
+      //监听total的值，动态改变Tabbar徽标的值
+      this.setBadge()
+    }
+  },
   onShow() {
     // 在页面刚展示的时候，设置数字徽标
     this.setBadge()
