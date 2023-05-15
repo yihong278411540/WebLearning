@@ -9455,9 +9455,9 @@ internalMixin(Vue);
 
 /***/ }),
 /* 26 */
-/*!***********************************************************************!*\
-  !*** /Users/david/Desktop/WebLearning/uniApp/uni-petsmart/pages.json ***!
-  \***********************************************************************/
+/*!************************************************************************!*\
+  !*** /Users/yihong/Desktop/WebLearning/uniApp/uni-petsmart/pages.json ***!
+  \************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -9601,9 +9601,9 @@ function normalizeComponent (
 
 /***/ }),
 /* 33 */
-/*!*************************************************************************************************************************************************************************************!*\
-  !*** /Users/david/Desktop/WebLearning/uniApp/uni-petsmart/node_modules/.store/@escook+request-miniprogram@0.2.1/node_modules/@escook/request-miniprogram/miniprogram_dist/index.js ***!
-  \*************************************************************************************************************************************************************************************/
+/*!**************************************************************************************************************************************************************************************!*\
+  !*** /Users/yihong/Desktop/WebLearning/uniApp/uni-petsmart/node_modules/.store/@escook+request-miniprogram@0.2.1/node_modules/@escook/request-miniprogram/miniprogram_dist/index.js ***!
+  \**************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9712,9 +9712,9 @@ exports.$http = $http;
 
 /***/ }),
 /* 34 */
-/*!***************************************************************************!*\
-  !*** /Users/david/Desktop/WebLearning/uniApp/uni-petsmart/store/store.js ***!
-  \***************************************************************************/
+/*!****************************************************************************!*\
+  !*** /Users/yihong/Desktop/WebLearning/uniApp/uni-petsmart/store/store.js ***!
+  \****************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -11006,9 +11006,9 @@ module.exports = index_cjs;
 
 /***/ }),
 /* 36 */
-/*!**************************************************************************!*\
-  !*** /Users/david/Desktop/WebLearning/uniApp/uni-petsmart/store/user.js ***!
-  \**************************************************************************/
+/*!***************************************************************************!*\
+  !*** /Users/yihong/Desktop/WebLearning/uniApp/uni-petsmart/store/user.js ***!
+  \***************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -11478,9 +11478,9 @@ module.exports = _asyncToGenerator, module.exports.__esModule = true, module.exp
 /* 84 */,
 /* 85 */,
 /* 86 */
-/*!****************************************************************************************************************!*\
-  !*** /Users/david/Desktop/WebLearning/uniApp/uni-petsmart/uni_modules/uni-icons/components/uni-icons/icons.js ***!
-  \****************************************************************************************************************/
+/*!*****************************************************************************************************************!*\
+  !*** /Users/yihong/Desktop/WebLearning/uniApp/uni-petsmart/uni_modules/uni-icons/components/uni-icons/icons.js ***!
+  \*****************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 

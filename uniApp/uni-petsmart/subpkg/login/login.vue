@@ -1,12 +1,13 @@
 <template>
-	<view>		<view class="sun-logo-box">			<view class="sun-logo">				<image class="sun-icon-img" src="@/static/login/login_appIcon.png"/>			</view>		</view>
+	<view>
+    		<view class="sun-logo-box">			<view class="sun-logo">				<image class="sun-icon-img" src="@/static/login/login_appIcon.png"/>			</view>		</view>
     
 		<view class="sun-login-box">			<view class="sun-label">				<image style="width: 28rpx;height:39rpx;" src="@/static/login/mobile_icon.png"/>				<text class="label-text">手机</text>			</view>			<view class="sun-input-box">				<input v-model="mobile" type="text" placeholder="请输入手机号" placeholder-class="placeholder-class"/>				<image @click="mobile=''" class="close-icon" src="@/static/login/close_icon.png"/>			</view>		</view>
     		<view class="sun-login-box">			<view class="sun-label">				<image style="width: 29rpx;height:37rpx;" src="@/static/login/pwd_icon.png"/>				<text class="label-text">密码</text>			</view>			<view class="sun-input-box">				<input v-model="password" type="text" placeholder="请输入密码" placeholder-class="placeholder-class"/>				<image @click="password=''" class="close-icon" src="@/static/login/close_icon.png"/>			</view>		</view>
     		<view class="sun-tip">
-      <text class="sun-tip-text" @click="goRegister">快捷登录</text>			<text class="sun-tip-text">忘记密码?</text>		</view>
+      <text class="sun-tip-text" @click="changeLoginType">快捷登录</text>			<text class="sun-tip-text" @click="forgetPassword">忘记密码?</text>		</view>
     		<view class="login-btn-box">			<view class="login-btn" @click="handleSubmit">登录</view>
-      <view class="register-btn" @click="handleSubmit">注册</view>		</view>
+      <view class="register-btn" @click="goRegister">注册</view>		</view>
     	</view>
 </template>
 
@@ -18,7 +19,20 @@
 			}
 		},
 		methods: {
-			handleSubmit() {				if(!this.mobile) return uni.showToast({title: '请输入手机号',icon:'none',duration: 1500})				if(!this.password) return uni.showToast({title: '请输入密码',icon:'none',duration: 1500})				uni.showToast({title: '登录成功',duration: 1500})			},			goRegister() {				uni.switchTab({url: '/pages/register/register'})			}
+      //切换登录方式
+      changeLoginType() {
+        
+      }, 
+      //忘记密码
+      forgetPassword() {
+        
+      },
+      //登录
+			handleSubmit() {				if(!this.mobile) return uni.showToast({title: '请输入手机号',icon:'none',duration: 1500})				if(!this.password) return uni.showToast({title: '请输入密码',icon:'none',duration: 1500})				uni.showToast({title: '登录成功',duration: 1500})			},
+      //注册			goRegister() {				uni.navigateTo({
+				  url:'/subpkg/register/register'
+				})			}
+      
 		}
 	}
 </script>

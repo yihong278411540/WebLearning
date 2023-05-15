@@ -41,7 +41,7 @@
     }
   },
   "editorSetting": {
-    "tabIndent": "auto",
+    "tabIndent": "insertSpaces",
     "tabSize": 2
   }
 }
