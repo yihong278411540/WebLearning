@@ -1,0 +1,106 @@
+@charset "UTF-8";
+/* 水平间距 */
+/* 水平间距 */
+/* 颜色变量 */
+/* 行为相关颜色 */
+/* 文字基本颜色 */
+/* 背景颜色 */
+/* 边框颜色 */
+/* 尺寸变量 */
+/* 文字尺寸 */
+/* 图片尺寸 */
+/* Border Radius */
+/* 水平间距 */
+/* 垂直间距 */
+/* 透明度 */
+/* 文章场景相关 */
+.sun-logo-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 400rpx;
+}
+.sun-logo-box .sun-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 180rpx;
+  height: 180rpx;
+  border-radius: 15rpx;
+  background-color: #FD6E91;
+  box-shadow: 0rpx 0rpx 30rpx #FD6E91;
+}
+.sun-logo-box .sun-logo .sun-icon-img {
+  width: 120rpx;
+  height: 120rpx;
+}
+.sun-login-box {
+  padding: 20rpx 60rpx;
+}
+.sun-login-box .sun-label {
+  display: flex;
+  align-items: center;
+}
+.sun-login-box .label-text {
+  margin-left: 14rpx;
+  font-weight: 500;
+  color: #272e2d;
+  font-size: 28rpx;
+}
+.sun-login-box .sun-input-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100rpx;
+  border-bottom: 1rpx solid #eee;
+  padding: 0px 10rpx;
+}
+.sun-login-box .placeholder-class {
+  font-size: 28rpx;
+  color: #C0C0C0;
+}
+.close-icon {
+  width: 36rpx;
+  height: 34rpx;
+}
+.sun-tip {
+  display: flex;
+  justify-content: space-between;
+  padding: 0rpx 68rpx;
+}
+.sun-tip .sun-tip-text {
+  color: #FD6E91;
+  font-size: 28rpx;
+}
+.login-btn-box {
+  width: 100%;
+  position: absolute;
+  bottom: 100rpx;
+  left: 0;
+  padding: 0 60rpx;
+}
+.login-btn-box .login-btn {
+  width: 80%;
+  height: 82rpx;
+  border-radius: 41rpx;
+  background-color: #FD6E91;
+  text-align: center;
+  line-height: 82rpx;
+  font-size: 32rpx;
+  font-weight: 500;
+  color: #ffffff;
+}
+.login-btn-box .register-btn {
+  width: 80%;
+  height: 82rpx;
+  border-radius: 41rpx;
+  background-color: #ffffff;
+  text-align: center;
+  line-height: 82rpx;
+  font-size: 32rpx;
+  font-weight: 500;
+  color: #FD6E91;
+  margin-top: 30rpx;
+}
+

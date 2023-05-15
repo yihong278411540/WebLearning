@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "用户",
+  "usingComponents": {
+    "my-userinfo": "/components/my-userinfo/my-userinfo"
+  }
+}

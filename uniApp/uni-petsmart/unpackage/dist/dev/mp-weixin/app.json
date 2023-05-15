@@ -1,0 +1,46 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/pets/pets",
+    "pages/my/my"
+  ],
+  "subPackages": [
+    {
+      "root": "subpkg",
+      "pages": [
+        "login/login",
+        "register/register"
+      ]
+    }
+  ],
+  "window": {
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "米欧智能",
+    "navigationBarBackgroundColor": "#FD6E91",
+    "backgroundColor": "#FFFFFF"
+  },
+  "tabBar": {
+    "selectedColor": "#FD6E91",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "小窝",
+        "iconPath": "static/tabbar/icon_xiaowo_nor.png",
+        "selectedIconPath": "static/tabbar/icon_xiaowo_sel.png"
+      },
+      {
+        "pagePath": "pages/pets/pets",
+        "text": "毛球",
+        "iconPath": "static/tabbar/icon_maoqiu_nor.png",
+        "selectedIconPath": "static/tabbar/icon_maoqiu_sel.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "static/tabbar/icon_user_nor.png",
+        "selectedIconPath": "static/tabbar/icon_user_sel.png"
+      }
+    ]
+  },
+  "usingComponents": {}
+}

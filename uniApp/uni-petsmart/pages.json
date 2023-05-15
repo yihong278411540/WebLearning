@@ -1,0 +1,94 @@
+{
+	"pages": [
+    {
+    "path": "pages/home/home",
+		"style": {
+      "navigationBarTitleText": "小窝"
+    }
+    },
+    {
+    "path": "pages/pets/pets",
+		"style": {
+      "navigationBarTitleText": "毛球"
+    }
+    },
+    {
+    "path": "pages/my/my",
+		"style": {
+      "navigationBarTitleText": "用户"
+    }
+    }
+  ],
+  "subPackages": [
+    {
+      "root": "subpkg",
+      "pages": [
+        {
+          "path" : "login/login",
+          "style" :{
+            "navigationBarTitleText": "登录"
+          }
+        },
+        {
+          "path" : "register/register",
+          "style" :{
+            "navigationBarTitleText": "注册"
+          }
+        }
+      ]
+    }
+  ],
+	"globalStyle": {
+		"navigationBarTextStyle": "#FFFFFF",
+		"navigationBarTitleText": "米欧智能",
+		"navigationBarBackgroundColor": "#FD6E91",
+		"backgroundColor": "#FFFFFF",
+		"app-plus": {
+			"background": "#efeff4"
+		}
+	},
+  "tabBar": {
+    "selectedColor": "#FD6E91",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "小窝",
+        "iconPath": "static/tabbar/icon_xiaowo_nor.png",
+        "selectedIconPath": "static/tabbar/icon_xiaowo_sel.png"
+      },
+      {
+        "pagePath": "pages/pets/pets",
+        "text": "毛球",
+        "iconPath": "static/tabbar/icon_maoqiu_nor.png",
+        "selectedIconPath": "static/tabbar/icon_maoqiu_sel.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "static/tabbar/icon_user_nor.png",
+        "selectedIconPath": "static/tabbar/icon_user_sel.png"
+      }
+    ]
+  }
+}
+
+
+// {
+//   "path" : "goods_detail/goods_detail",
+//   "style" :{}
+// },
+// {
+//     "path" : "goods_list/goods_list",
+//     "style" : {
+//       "onReachBottomDistance": 150,
+//       "enablePullDownRefresh": true,
+//       "backgroundColor": "#F8F8F8"
+//     }
+// },
+// {
+//   "path" : "search/search",
+//   "style" : {
+//       "navigationBarTitleText": "",
+//       "enablePullDownRefresh": false
+//   }
+// }
